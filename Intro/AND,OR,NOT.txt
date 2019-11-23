@@ -1,0 +1,44 @@
+The WHERE clause can be combined with AND, OR, and NOT operators.
+
+The AND operator displays a record if all the conditions separated by AND are TRUE.
+The OR operator displays a record if any of the conditions separated by OR is TRUE.
+The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+https://www.w3schools.com/sql/sql_and_or.asp
+Use "Customers" Table
+
+AND EX:
+//selects all fields from "Customers" where country is "Germany" AND city is "Berlin":
+
+SELECT * FROM Customers
+WHERE Counctry = "Germany" AND City = "Berlin";
+
+OR EX:
+selects all fields from "Customers" where city is "Berlin" OR "M¨¹nchen":
+
+SELECT * FROM Customers
+WHERE City = 'Berlin' or City = "M¨¹nchen";
+
+NOT EX:
+selects all fields from "Customers" where county is NOT "Germany"
+
+SELECT * FROM Customers
+WHERE NOT Country = "Germany";
+
+
+COMBINING AND, OR AND NOT
+
+EX1:
+//selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "M¨¹nchen"
+
+SELECT * FROM Customers
+WHERE Country = "Germany" AND (City = "Berlin" OR City = "M¨¹nchen");
+
+EX2:
+//selects all fields from "Customers" where country is NOT "Germany" and NOT "USA"
+
+SELECT * FROM Customers
+WHERE NOT country = "Germany" AND NOT Country = "USA";
+
+
+

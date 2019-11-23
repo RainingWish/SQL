@@ -1,0 +1,28 @@
+The MIN() function returns the smallest value of the selected column.
+
+The MAX() function returns the largest value of the selected column.
+
+MIN() Syntax:
+
+SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+
+
+MAX() Syntax:
+
+SELECT MAX(column_name)
+FROM table_name
+WHERE condition;
+
+https://www.w3schools.com/sql/sql_min_max.asp
+"Products" table
+
+
+MIN() Example:
+SELECT MIN(Price) AS SmallestPrice //return will be SmallestPrice + numbs
+FROM Products;
+
+MAX() Example
+SELECT MAX(Price) AS LargestPrice //return will be LargestPrice + numbs
+FROM Products;

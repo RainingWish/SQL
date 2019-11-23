@@ -1,0 +1,34 @@
+A field with a NULL value is a field with no value.
+
+Test for NULL Values:
+
+IS NULL Syntax:
+
+SELECT column_names
+FROM table_name
+WHERE column_name IS NULL;
+
+
+IS NOT NULL Syntax:
+
+SELECT column_names
+FROM table_name
+WHERE column_name IS NOT NULL;
+
+https://www.w3schools.com/sql/sql_null_values.asp
+"Customers"  table 
+
+The IS NULL Operator:
+
+//lists all customers with a NULL value in the "Address" field
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address is NULL;
+
+
+The IS NOT NULL Operator
+
+//lists all customers with a value in the "Address" field
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address is NOT NULL;

@@ -1,0 +1,17 @@
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+https://www.w3schools.com/sql/sql_join.asp
+"Orders" and "Customers" table
+
+The "CustomerID" column in the "Orders" table refers to the "CustomerID" in the "Customers" table. 
+The relationship between the two tables above is the "CustomerID" column.
+
+
+Then, we can create the following SQL statement (that contains an INNER JOIN),
+ that selects records that have matching values in both tables:
+
+EX:
+SELECT o.OrderID, c.CustomerName, o.OrderDate
+FROM Orders AS o
+INNER JOIN Customers AS c 
+ON o.CustomerID = c.CustomerID;

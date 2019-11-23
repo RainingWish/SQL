@@ -1,0 +1,22 @@
+The SELECT statement is used to select data from a database.
+
+EX1:
+SELECT column1, column2, ...
+"filtered"> FROM table_name;
+
+Here in EX1, column1, column2, ... are the field names of the table you want to select data from.
+
+If you want to select all the fields available in the table, use EX2
+
+EX2:
+SELECT * FROM table_name;
+
+https://www.w3schools.com/sql/sql_select.asp
+
+"Customers" table have "CustomerID"	"CustomerName" "ContactName" "Address" "City" "PostalCode" "Country" 7 columns
+
+if we only want to selects CustomerName" and "City" can code follow:
+SELECT CustomerName, City FROM Customers;
+
+
+

@@ -1,0 +1,27 @@
+The UPDATE statement is used to modify the existing records in a table.
+
+UPDATE Syntax:
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+https://www.w3schools.com/sql/sql_update.asp
+"Customers" table
+
+UPDATE Table:
+//updates the first customer (CustomerID = 92) with a new contact person and a new city.
+
+UPDATE Customers
+SET ContactName = "Alfred Schmidt", City = "Frankfurt"
+WHERE CustomerID = 92;
+
+
+UPDATE Multiple Records:
+//update the contactname to "Juan" for all records where country is "Mexico"
+UPDATE Customers
+SET ContactName = "Juan"
+WHERE Country is "Mexico";
+
+Update Warning!
+Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!
+

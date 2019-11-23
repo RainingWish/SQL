@@ -1,0 +1,56 @@
+The WHERE clause is used to filter records.
+
+The WHERE clause is used to extract only those records that fulfill a specified condition.
+
+EX£º
+SELECT column1, column2,...
+"filtered">FROM table_name
+"filtered">WHERE condition;
+
+Note: The WHERE clause is not only used in SELECT statement, 
+it is also used in UPDATE, DELETE statement, etc.!
+
+https://www.w3schools.com/sql/sql_where.asp
+
+Customer Table
+
+EX1:
+Selects all the customers from the contry "USA" in "Customers" table
+
+SELECT*FROM Customers
+"filtered">WHERE Country = 'USA' // '' and "" both working for most database system
+
+
+EX2:
+Text Fields vs. Numeric Fields
+Select customer infornation which customerID=1 in "Customers" table
+
+SELECT*FROM Customers
+"filtered">WHERE CustomerID = 1;
+
+
+Operators in The WHERE Clause
+Operator			Description	
+=				Equal	
+>				Greater than	
+<				Less than	
+>=				Greater than or equal	
+<=				Less than or equal	
+<>				Not equal. Note: In some versions of SQL this operator may be written as !=	
+BETWEEN				Between a certain range	
+LIKE				Search for a pattern	
+IN				To specify multiple possible values for a column
+
+
+EX3:
+USE OF Between
+SELECT * FROM Products
+WHERE Price BETWEEN 50 AND 60;
+//output all data for price between 50-60
+
+
+EX4:
+USE OF IN
+SELECT * FROM Customers
+WHERE City IN ('Paris','London');
+//output all data for city == Paris or London

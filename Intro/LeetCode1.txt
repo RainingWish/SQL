@@ -1,0 +1,54 @@
+class Solution {
+    public int strStr(String h, String n) {
+        
+        if(n.length()==0) return 0;
+        
+        for (int i = 0; i<( h.length() - n.length()+1);i++){
+            
+            for (int j = 0; j<n.length() && h.charAt(i+j) == n.charAt(j);j++){
+                if(j==n.length()-1){
+                    return i;
+                }
+            }
+            
+        }
+        return -1;
+        
+    }
+}
+
+
+class Solution {
+    public int strStr(String h, String n) {
+        int old_counter = 0;
+        int new_counter = 0;
+        if(n.length()==0) return 0;
+        
+        
+        
+        for (int i = 0; i<( h.length()-n.length()+1);i++){
+
+                for (int j = 0; j<n.length();j++){
+                    if((h.charAt(i)==n.charAt(j)) && ((new_counter == old_counter + 1) || (old_counter == 0 && new_counter == 0))){
+                        old_counter = new_counter;
+                        new_counter ++;
+                        break;
+                    }
+                    if (h.charAt(i)!=n.charAt(j)){
+                        old_counter = 0;
+                        new_counter = 0; 
+                    }
+                
+            
+                    if(new_counter == n.length()){
+                        return i-new_counter-1;
+                    }
+
+                    
+            }
+            
+        }
+        return -1;
+        
+    }
+}

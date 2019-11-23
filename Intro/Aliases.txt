@@ -1,0 +1,67 @@
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+Aliases are often used to make column names more readable.
+
+USE OF AS!!!
+
+Alias Column Syntax:
+
+SELECT column_name AS alias_name
+FROM table_name;
+
+
+Alias Table Syntax:
+
+SELECT column_name(s)
+FROM table_name AS alias_name;
+
+https://www.w3schools.com/sql/sql_alias.asp
+"Customers" table
+"Orders" table
+
+
+Alias for Columns Examples
+
+EX1:
+//creates two aliases, one for the CustomerID column and one for the CustomerName column
+
+SELECT CustomerID AS ID, CustomerName AS Customer
+FROM Customers;
+
+EX2:
+//creates two aliases, one for the CustomerName column and one for the ContactName column.
+//Note: It requires double quotation marks or square brackets if the alias name contains spaces
+
+SELECT CustomerName AS Customer, ContactName  AS [Contact Person]
+FROM Customers;
+
+EX3:
+//creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country)
+
+SELECT CustomerName, Address + "," + PostalCode +" "+ City+", "+ Country AS Address
+FROM Customers;
+
+
+Alias for Tables Example
+EX4:
+//selects all the orders from the customer with CustomerID=4 (Around the Horn).
+//We use the "Customers" and "Orders" tables, and give them the table aliases of "c" and "o" respectively
+
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName  = "Around the Horn" AND c.CustomerID = o.CustomerID;
+
+or: //without Aliases
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+FROM Customers, Orders
+WHERE Customers.CustomerName="Around the Horn" AND Customers.CustomerID=Orders.CustomerID;
+
+
+
+Aliases can be useful when:
+
+There are more than one table involved in a query
+Functions are used in the query
+Column names are big or not very readable
+Two or more columns are combined together
+

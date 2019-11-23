@@ -1,0 +1,38 @@
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+EX:
+SELECT DISTINCT column1, column2, ...
+"filtered"> FROM table_name;
+
+column1, column2, ... are the field names of the table you want to select data from.
+Select Distinct will only output different values (no repeat values).
+only ALL column1, column2, ... values are same will be remove
+
+https://www.w3schools.com/sql/sql_distinct.asp
+
+Customers table for example again
+
+1st
+We only want to find our customers form which countries,
+so use SELECT DISTINCT statement:
+
+SELECT DISTINCT Country FROM Customers;
+//Here will listing all countries name
+
+2nd
+Use COUNT to find the number of distinct customer countries:
+
+SELECT COUNT(DISTINCT Country) FROM Customers;
+//Here will return a number
+
+3rd
+Here we want to eorkaround for MS Access
+
+SELECT Count(*) As DistinctCountries
+"filtered">FROM (SELECT DISTINCT Country FROM Customers)'
+//here will return a table
+	DistinctCountries
+		18
+
+
+

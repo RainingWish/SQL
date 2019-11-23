@@ -1,0 +1,68 @@
+The SELECT TOP clause is used to specify the number of records to return.
+
+The SELECT TOP clause is useful on large tables with thousands of records.
+
+SQL Server / MS Access Syntax:
+
+SELECT TOP number | percent column_name(s)
+FROM table_name
+WHERE condition;
+
+
+MySQL Syntax:
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
+
+
+Oracle Syntax:
+
+SELECT column_name(s)
+FROM table_name
+WHERE ROWNUM <= number;
+
+https://www.w3schools.com/sql/sql_top.asp
+"Customers" table
+
+EX1:
+//selects the first three records from the "Customers" table
+SELECT TOP 3 * FROM Customers;
+
+EX2:
+//shows the equivalent example using the LIMIT clause
+SELECT * FROM Customers
+LIMIT 3;
+
+EX3:
+//shows the equivalent example using ROWNUM
+SELECT * FROM Customers
+WHERE ROWNUM <= 3;
+
+
+SQL TOP PERCENT Example
+//selects the first 50% of the records from the "Customers" table
+SELECT TOP 50 PERCENT * FROM Customers;
+
+
+ADD a WHERE CLAUSE
+
+EX4: 
+//selects the first three records from the "Customers" table, where the country is "Germany"
+SELECT TOP 3 * FROM Customers
+WHERE Country = "Germany";
+
+
+EX5:
+//EX2 add where
+SELECT * FROM Customers
+WHERE Country = "Germany"
+LIMIT 3
+
+EX6:
+//EX3 add where
+SELECT * FROM Customers
+WHERE Country = "Germany" AND ROWNUM <= 3;
+
+
