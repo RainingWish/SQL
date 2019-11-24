@@ -1,0 +1,76 @@
+A FOREIGN KEY is a key used to link two tables together.
+
+A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+
+The table containing the foreign key is called the child table, and the table containing the candidate key is called the referenced or parent table
+
+
+https://www.w3schools.com/sql/sql_foreignkey.asp
+"Persons" and "Orders" table
+
+Notice that the "PersonID" column in the "Orders" table points to the "PersonID" column in the "Persons" table
+
+The "PersonID" column in the "Persons" table is the PRIMARY KEY in the "Persons" table
+
+The "PersonID" column in the "Orders" table is a FOREIGN KEY in the "Orders" table
+
+
+FOREIGN KEY on CREATE TABLE
+//  creates a FOREIGN KEY on the "PersonID" column when the "Orders" table is created
+
+MySQL:
+CREATE TABLE Orders(
+	OrderID int NOT NULL,
+	OrderNumber int NOT NULL,
+	PersonID int,
+	PRIMARY KEY (OrderID),
+	FOREIGN KEY (Person ID) REFERENCES Persons (PersonID)
+);
+
+SQL Server / Oracle / MS Access:
+CREATE TABLE Orders(
+	OrderID int NOT NULL PRIMARY KEY,
+	OrderNumber int NOT NULL,
+	PersonID int FOREIGN KEY REFERENCES Persons(PersonID),
+);
+
+
+//To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns
+
+MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Orders(
+	OrderID int NOT NULL,
+	OrderNumber int NOT NULL,
+	PersonID int,
+	PRIMARY KEY (OrderID),
+	CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+	REFERENCES Persons(PersonID)
+);
+
+
+FOREIGN KEY on ALTER TABLE
+//to create a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+//To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns
+
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+
+DROP a FOREIGN KEY Constraint
+//To drop a FOREIGN KEY constraint
+
+MySQL:
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+DROP CONSTRAINT FK_PersonOrder;
+
+
+

@@ -1,0 +1,23 @@
+NoSQL originally referring to non SQL or non relational is a database.
+
+NoSQL databases are used in real-time web applications and big data and their use are increasing over time.
+
+Advantages of NoSQL:
+1. High sclability (use sharding for horizontal scaling)
+2.High availability (Auto replication)
+
+Disadvantages of NoSQL:
+1.Narrow focus (designed for storage and little functionality)
+2.Open-source (no reliable standard)
+3.Management challenge (big data -> large amount data as simple as possible)
+4.GUI is not available
+5.Backup
+6.Large document size
+
+When should NoSQL be used:
+
+1.When huge amount of data need to be stored and retrieved .
+2.The relationship between the data you store is not that important
+3.The data changing over time and is not structured.
+4.Support of Constraints and Joins is not required at database level
+5.The data is growing continuously and you need to scale the database regular to handle the data.

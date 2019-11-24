@@ -1,0 +1,39 @@
+The CREATE INDEX statement is used to create indexes in tables.
+
+Indexes are used to retrieve data from the database more quickly than otherwise. 
+The users cannot see the indexes, they are just used to speed up searches/queries.
+
+
+CREATE INDEX Syntax:
+//Creates an index on a table
+
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+
+CREATE UNIQUE INDEX Syntax:
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+
+CREATE INDEX Example
+//creates an index named "idx_lastname" on the "LastName" column in the "Persons" table
+
+CREATE INDEX idx_lastname
+ON Persons(LastName);
+
+//If you want to create an index on a combination of columns, 
+//you can list the column names within the parentheses, separated by commas
+
+CREATE INDEX idx_pname
+ON Persons(LastName, FirstName);
+
+
+DROP INDEX Statement
+//The DROP INDEX statement is used to delete an index in a table
+
+MySQL:
+ALTER TABLE table_name
+DROP INDEX index_name;
+
