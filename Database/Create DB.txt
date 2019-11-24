@@ -1,0 +1,14 @@
+The CREATE DATABASE statement is used to create a new SQL database.
+
+Syntax:
+
+CREATE DATABASE				;
+
+
+CREATE DATABASE Example:
+
+EX:
+//creates a database called "testDB"
+
+CREATE DATABASE testDB;
+

@@ -1,0 +1,51 @@
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+
+INSERT INTO SELECT requires that data types in source and target tables match
+The existing records in the target table are unaffected
+
+INSERT INTO SELECT Syntax
+
+Copy all columns from one table to another table:
+
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+Copy only some columns from one table into another table:
+
+INSERT INTO (column1, column2,column3...)
+SELECT column1, column2,column3...
+FROM table1
+WHERE condition;
+
+https://www.w3schools.com/sql/sql_insert_into_select.asp
+"Customers" and "Suppliers" table
+
+
+SQL INSERT INTO SELECT Examples:
+
+EX1:
+//copies "Suppliers" into "Customers"
+
+SELECT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM suppliers;
+
+EX2:
+//copies "Suppliers" into "Customers" (fill all columns)
+
+INSERT INTO Customers(CustomerName, ContactName, Addressm City, PostalCode, Country)
+SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
+
+EX3:
+//copies only the German suppliers into "Customers"
+
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers
+WHERE Country = "Germany";
+
+
+
+
+
+
+

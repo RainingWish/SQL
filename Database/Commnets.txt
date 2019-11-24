@@ -1,0 +1,21 @@
+Comments are used to explain sections of SQL statements, or to prevent execution of SQL statements.
+
+Single Line Comments:
+
+Start with "--" and cannot executed
+
+EX:
+
+SELECT * FROM Customers -- WHERE City='Berlin';
+
+
+Multi-line Comments:
+
+Start with "/*" end with "*/"
+
+EX:
+
+/*Select all the columns
+of all the records
+in the Customers table:*/
+"filtered"> SELECT * FROM Customers;

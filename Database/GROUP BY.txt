@@ -1,0 +1,39 @@
+The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country"
+
+GROUP BY Syntax£º
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s)
+
+https://www.w3schools.com/sql/sql_groupby.asp
+"Customers" and "Order" table
+
+SQL GROUP BY Examples
+
+EX1:
+// lists the number of customers in each country
+SELECT COUNT (CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+
+EX2:
+// lists the number of customers in each country, sorted high to low
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+
+
+GROUP BY With JOIN Example
+
+EX3:
+//lists the number of orders sent by each shipper
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FFROM Orders
+LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName;
+
+

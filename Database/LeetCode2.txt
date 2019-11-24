@@ -1,0 +1,21 @@
+//Remove Duplicates from Sorted List
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        
+        ListNode Remove = head;
+
+        while(Remove !=null && Remove.next != null){
+            
+            if(Remove.val == Remove.next.val){
+                Remove.next = Remove.next.next;
+            }else{
+                Remove = Remove.next;
+            }
+            
+        }
+        
+        return head;
+        
+    }
+}
